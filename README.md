@@ -44,24 +44,31 @@ To use the solver, simply initialize the `QuantumSATSolver` and pass a list of c
 ### Quick Start Example
 
 ```python
-from entangle_solver import Solver.py
+# step 1- start
+# Mode 1 = Default mode (solves for 3 node graph coloring)
+# Mode 2 = Manual mode(to give input by yourself)
+-----------------------------------------------------
+eg.- Select Mode (1/2): 2
+-----------------------------------------------------
 
+# step 2- Example: 5 Qubits
+enter number of variables : eg.5
 # 1. Define the Problem Topology (Number of Variables)
-# Example: 5 Qubits
-solver = QuantumSATSolver(n_qubits=5)
-
-# 2. Define Constraints
+-----------------------------------------------------
+eg. Number of Variables: 4
+-----------------------------------------------------
+#step 3-  Define Constraints
 # Format: "GATE(qubit_indices)"
 constraints = [
     "OR(0, 1, 2, 3, 4)",       # High-Arity OR Gate
     "XOR(0, 1, 2, 3, 4)",      # Global Parity Check
     "AND(0, 4)"                # Boundary Condition
 ]
+-----------------------------------------------------
+eg. Enter Formula (e.g. XOR(0,1,2) OR(0,1) NOT(1,2)):
+> XOR(0,1,2) XOR(1,2,3) XOR(0,3) OR(0,1,2,3)
+----------------------------------------------------
 
-# 3. Solve and Visualize
-# Mode 1 = Run Simulation & Plot Histogram
-# Mode 2 = Draw Circuit Diagram
-solver.solve(constraints, mode=1, shots=4096)
-
-<img width="721" height="431" alt="image" src="https://github.com/user-attachments/assets/5cb21cef-7aff-41f4-863b-274e3e392269" />
+![Histogram Result](images/histogram_f1.png)
+![Circuit Diagram](images/circuit_f1.png)
 
