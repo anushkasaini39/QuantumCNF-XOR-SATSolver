@@ -1,0 +1,14 @@
+import ast, math
+from typing import List, Tuple, Dict, Any
+import matplotlib.pyplot as plt
+!pip install qiskit
+!pip install qiskit_aer
+!pip install qiskit_visualization
+!pip install qiskit_algorithms
+!pip install pylatexenc
+from qiskit import *
+from qiskit_aer import AerSimulator
+from qiskit.visualization import *
+%matplotlib inline
+from qiskit import QuantumCircuit, transpile, QuantumRegister, ClassicalRegister
+from qiskit.circuit.library import MCXGate
